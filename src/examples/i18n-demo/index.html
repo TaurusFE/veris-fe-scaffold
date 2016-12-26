@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- content请填写业务模块编码，此编码与i18n目录下的对应模块的子目录名称保持一致 -->
+  <meta name="biz-code" content="example">
+  <title>i18n Demo</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <style>
+    .sg-component__status {
+      position: relative;
+    }
+
+    .sg-component__status:before {
+      background-color: #43c682;
+      background: -webkit-linear-gradient(0deg, #43c682, #1db7bb, #038cd6);
+      background: linear-gradient(90deg, #43c682, #1db7bb, #038cd6);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -1px;
+      right: -1px;
+      height: 3px;
+    }
+
+    .change-lang--wrapper{
+      line-height: 32px;
+    }
+
+  </style>
+</head>
+<body>
+<div id="i18n_wrapper" v-cloak>
+  <section class="container leader--large" :style="styleObject">
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">i18n-demo</h2>
+    </div>
+    <div class="container border">
+      <div class="block--content box--greyed border--bottom--light sg-component__status">
+        <div class="sg-component__label">
+          <div class="grid-row grid-row--gutter-none grid-row-md--between">
+            <div class="col-md-6">
+              <h3 class="text-size--28">{{ $t("i18nDemo.headline_form_text") }}</h3>
+            </div>
+            <div class="col-md-6 text--right change-lang--wrapper">
+              <span class="mobile-text-size--16 toright--med">{{ $t("i18nDemo.lang_des_text") }}{{ $t("i18nDemo.lang_des_value") }}</span>
+              <button class="button button--small button--default" @click="changeLang">{{ $t("i18nDemo.change_lang_btn_text") }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block--content">
+        <div class="sg-component__label"></div>
+        <h3 class="title--xsmall title--block">{{ $t("i18nDemo.headline_user_text") }}</h3>
+        <div class="form-item form-item--required">
+          <label for="form-field-simple-with-label-username">{{ $t("i18nDemo.form_username_label") }}</label>
+          <input id="form-field-simple-with-label-username" type="text" :placeholder="$t('i18nDemo.form_username_placeholder')">
+        </div>
+        <div class="form-item form-item--required">
+          <label for="form-field-simple-with-label-password">{{ $t("i18nDemo.form_password_label") }}</label>
+          <input id="form-field-simple-with-label-password" type="password" :placeholder="$t('i18nDemo.form_password_placeholder')">
+        </div>
+        <div class="form-item form-item--required">
+          <label for="form-field-simple-with-label-email">{{ $t("i18nDemo.form_email_label") }}</label>
+          <input id="form-field-simple-with-label-email" type="email" :placeholder="$t('i18nDemo.form_email_placeholder')">
+        </div>
+        <div class="form-item form-item--required">
+          <label for="form-field-simple-with-label-phone--number">{{ $t("i18nDemo.form_phone_label") }}</label>
+          <input id="form-field-simple-with-label-phone--number" type="email" :placeholder="$t('i18nDemo.form_phone_placeholder')">
+        </div>
+        <div class="form-item">
+          <label for="area">{{ $t("i18nDemo.form_evaluation_label") }}</label>
+          <textarea id="area" type="text" :placeholder="$t('i18nDemo.form_evaluation_placeholder')"></textarea>
+        </div>
+        <div class="block--col">
+          <div class="float--right row">
+            <a class="button button--action trailer--small float--right" href="#">{{ $t("i18nDemo.save_btn_text") }}</a>
+            <a class="button float--right color-gray" href="#">{{ $t("i18nDemo.cancel_btn_text") }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

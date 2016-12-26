@@ -1,0 +1,24 @@
+{
+  "root": {
+    "id": 1,
+    "name": "Customer Management"
+  },
+  "sub": [
+    {
+      "id": 11,
+      "name": "Customer Management"
+    },
+    {
+      "id": 12,
+      "name": "Create Customer"
+    },
+    {
+      "id": 13,
+      "name": "Mobile Office"
+    },
+    {
+      "id": 14,
+      "name": "Order Management"
+    }
+  ]
+}
